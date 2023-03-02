@@ -3,6 +3,7 @@ from wtforms import StringField, SelectField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 from map.map import map
+print(map)
 # tuple(map)
 # ('Seattle', 'San Francisco', 'Los Angeles', 'Phoenix', 'Denver', 'Kansas City', 'Houston', 'Chicago', 'Nashville', 'New York', 'Washington D.C.', 'Miami')
 
@@ -19,6 +20,6 @@ class ShippingForm(FlaskForm):
     recipient = StringField("Recipient", validators=[DataRequired()])
     origin = SelectField("Origin", choices=select_choices, validators=[DataRequired()])
     destination = SelectField("Destination", choices=select_choices, validators=[DataRequired()])
-    express = BooleanField("Express", validators=[DataRequired()])
+    express = BooleanField("Express")
     submit = SubmitField("Send")
     cancel = SubmitField("Cancel")
