@@ -1,0 +1,10 @@
+<form method="POST" action="{{ url_for('update_package', id=package.id) }}">
+  {{ form.csrf_token }}
+  <div>{{ form.sender.label }} {{ form.sender }}</div>
+  <div>{{ form.recipient.label }} {{ form.recipient }}</div>
+  <div>{{ form.origin.label }} {{ form.origin }}</div>
+  <div>{{ form.destination.label }} {{ form.destination }}</div>
+  <div>{{ form.express.label }} {{ form.express }}</div>
+  <div>{{ form.submit }}</div>
+  <div>{{ form.cancel }}</div>
+</form>

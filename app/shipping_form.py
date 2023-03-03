@@ -3,7 +3,7 @@ from wtforms import StringField, SelectField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 from map.map import map
-print(map)
+# print(map)
 # tuple(map)
 # ('Seattle', 'San Francisco', 'Los Angeles', 'Phoenix', 'Denver', 'Kansas City', 'Houston', 'Chicago', 'Nashville', 'New York', 'Washington D.C.', 'Miami')
 

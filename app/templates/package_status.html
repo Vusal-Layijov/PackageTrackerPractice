@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <Nav>
-        <a href="/new_package">New package</a>
-    </Nav>
+  </head>
+  <body>
+    <nav>
+      <a href="/new_package">New package</a>
+    </nav>
     <h1>Package status</h1>
-    {% if packages %}
-    {% for package in packages %}
-        <p>ID:{{package.id}}</p>
-        <p>Sender:{{package.sender}}</p>
-        <p>Recioient:{{package.recipient}}</p>
-        <p>Origin:{{package.origin}}</p>
-        <p>Destination:{{package.destination}}</p>
-        <p>Location:{{package.location}}</p>
-    {% endfor %}
-    {% else %}
+    {% if packages %} {% for package in packages %}
+    <p>ID:{{package.id}}</p>
+    <p>Sender:{{package.sender}}</p>
+    <p>Recioient:{{package.recipient}}</p>
+    <p>Origin:{{package.origin}}</p>
+    <p>Destination:{{package.destination}}</p>
+    <p>Location:{{package.location}}</p>
+    <form method="GET" action="{{ url_for('update_package', id=package.id) }}">
+        <button type="submit">Update</button>
+    </form>
+    <form method="POST" action="{{ url_for('delete_package', id=package.id) }}">
+      <button type="submit">Delete</button>
+    </form>
+    {% endfor %} {% else %}
     <h2>No packages</h2>
     {%endif%}
-
-</body>
+  </body>
 </html>
